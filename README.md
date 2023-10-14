@@ -50,5 +50,6 @@ __今後改善する点__
 
 ![FireShot Capture 008 - portfolio01 - 127 0 0 1](https://github.com/dog0922t/portfolio_1/assets/145114733/33d82886-52a8-4c84-8735-b2847ea3c44d)
 
-―――――――――――――――ーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーーー
+
+
 <img width="960" alt="スクリーンショット 2023-10-14 145723" src="https://github.com/dog0922t/portfolio_1/assets/145114733/37493ff8-7b7f-49a3-9eeb-b0e017a20a39">
