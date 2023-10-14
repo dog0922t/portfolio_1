@@ -1,0 +1,611 @@
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.wrapper{
+    min-height: 100vh;
+    height:100%
+}
+.header{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: space-between;
+    align-items: center;
+    align-content: center;
+}
+img {
+    width: 150px;
+    height: 90px;
+    image-rendering: -webkit-optimize-contrast;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+}
+.menu {
+	display:flex;
+    flex-direction: row;
+    flex-wrap:wrap;
+    justify-content: flex-end;
+    align-items: center;
+    align-content: center;
+    font-size: 100%;
+}
+.title{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+    background-color: #2e2c2f;
+    color:#ecf0f1;
+    line-height: 1.5em;
+}
+
+
+.contents{
+    display: grid;
+position: relative;
+height:350px;
+width: 400px;
+margin: 20px auto;
+max-width: 500px;
+border-radius:10px;
+flex-flow: column;
+padding: 0.5px;
+background: #FFCDAD;
+box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 10px;
+}
+
+.subcontents{
+    width:383px;
+    height:178px;
+    align-self: center;
+    justify-self: center;
+    
+}
+
+.hixyou{
+    border-collapse: collapse;
+    border-spacing: 0;
+    border: 0.5px solid #272D2D;
+    width: 183px;
+    height: 175px;
+    float: right;
+}
+.oripasamune{
+    display: block;
+    width: 200px;
+    height: 175px;
+    float: left;
+    background-size: cover;/* 背景を最小値で収まる*/
+    background-repeat: no-repeat; /* 背景を繰り返さない*/
+    background-image: url("./images/oripa.jpg");
+    
+}
+.design01{
+    
+    text-align: center;
+    background-color: #FFCDAD;
+    color: #272D2D;
+}
+
+.design03{
+    text-align: center;
+    padding: 0.5px;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+
+.atari{
+    background: #FFCDAD;
+    border-left-style: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+
+}
+.design04{
+    text-align: center;
+    padding: 0.5px;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+.zentai{
+    text-align: center;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+
+.openbutton {
+    align-self: center;
+    justify-self: center;
+    width: 200px;
+	cursor:pointer;
+    color: #272D2D;
+    background-color:#FF914C;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center; /*テキストの位置　真ん中*/
+    
+}
+.link{
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+    color: #fff;
+}
+
+#popup {
+	display: none;
+}
+
+.gray {
+	display: none;
+}
+
+#popup:checked + .gray {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.popupwindow {
+	position: fixed;
+    align-self: center;
+    justify-self: center;
+	top: 50%;
+	left: 50%;
+	width: 750vw;
+	max-width: 750px;
+    padding: 30px;
+	height: 550px;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+.popuptitle{
+    color: #E83015;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: #E83015 2px solid;
+}
+
+.popupclose {
+	position: absolute;
+    color: #fff;
+    background-color:#E83015;
+    padding: 5px 13px;
+    border-radius: 10px;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+
+
+#video{
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#camera-canvas{
+    align-self: center;
+    justify-self: center;
+    
+    width: 550px;
+    height: 330px;
+    z-index: 50;
+}
+
+#rect-canvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#qr-msg{
+   color: #272D2D;
+}
+
+
+@media screen and (max-width: 400px) {
+	/* 400px以下に適用されるCSS（スマホ用） */
+    .contents{
+        display: flex;
+        flex-wrap: wrap;
+        /* position: relative; */
+        width: 100%;
+        margin: 20px auto;
+        max-width: 500px;
+        border-radius:10px;
+        flex-flow: column;
+        padding: 0.5px;
+        background: #FFCDAD;
+        box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 10px;
+    }
+}
+.subcontents{
+    /* position: relative; */
+    width: 97%;
+    height: 178px;
+    align-self: center;
+    justify-self: center;
+    margin:1%;
+}
+
+.hixyou{
+   /* border-collapse: collapse; */
+   /* border-spacing: 0; */
+   border: 0.5px solid #272D2D;
+   width: 50%;
+   height: 175px;
+
+}
+.oripasamune{
+    /* display: block; */
+    width: 50%; 
+    height: 175px;
+    float: left;
+    background-size: cover;/* 背景を最小値で収まる*/
+    background-repeat: no-repeat; /* 背景を繰り返さない*/
+    background-image: url(./images/oripa.jpg);
+}
+.design01{
+    
+    text-align: center;
+    background-color: #FFCDAD;
+    color: #272D2D;
+}
+
+.design03{
+    text-align: center;
+    padding: 0.5px;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+
+.atari{
+    background: #FFCDAD;
+    border-left-style: none;
+    border-collapse: collapse;
+    border-spacing: 0;
+    text-align: center;
+
+}
+.design04{
+    text-align: center;
+    padding: 0.5px;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+    white-space: nowrap;
+}
+.zentai{
+    text-align: center;
+    background: #FFCDAD;
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.openbutton {
+    align-self: center;
+    justify-self: center;
+    width: 200px;
+	cursor:pointer;
+    color: #272D2D;
+    background-color:#FF914C;
+    padding: 10px;
+    margin-top: 30px;
+    border-radius: 10px;
+    text-align: center; /*テキストの位置　真ん中*/
+    
+}
+.link{
+    align-self: center;
+    justify-self: center;
+    text-decoration: underline;
+    color: #fff;
+}
+
+#popup {
+	display: none;
+}
+
+.gray {
+	display: none;
+}
+
+#popup:checked + .gray {
+	display: block;
+	position: fixed;
+	width: 100%;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	z-index: 9999;
+	background: rgba(0, 0, 0, 0.6);
+}
+
+.popupwindow {
+	position: fixed;
+    align-self: center;
+    justify-self: center;
+	top: 50%;
+	left: 50%;
+	width: 100%;
+	
+    padding: 30px;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 4px;
+	align-items: center;
+	transform: translate(-50%, -50%);
+}
+
+.popuptitle{
+    color: #E83015;
+    align-self: center;
+    justify-self: center;
+    font-size: 20px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: #E83015 2px solid;
+}
+
+.popupclose {
+	position: absolute;
+    color: #fff;
+    background-color:#E83015;
+    padding: 5px 13px;
+    border-radius: 10px;
+	top: 20px;
+	right: 20px;
+	cursor:pointer;
+}
+
+
+
+#video{
+    align-self: center;
+    justify-self: center;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    visibility: hidden;
+}
+
+#camera-canvas{
+    align-self: center;
+    justify-self: center;
+    
+    width: 100%;
+    height: 330px;
+    z-index: 50;
+}
+
+#rect-canvas{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+}
+
+#qr-msg{
+    position: absolute;
+    top: 500px;
+    left: 0px;
+}
+
+
+@media screen and (min-width: 481px) {
+        /* 481px以上に適用されるCSS（スマホ用～タブレット） */
+        .contents{
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            margin: 20px auto;
+            border-radius:10px;
+            flex-flow: column;
+            padding: 0.5px;
+            background: #FFCDAD;
+            box-shadow: rgba(0, 0, 0, 0.33) 0px 0px 10px;
+        }
+    }
+    .subcontents{
+        /* position: relative; */
+        /* width: 50%; */
+        align-self: center;
+        justify-self: center;
+        margin:5%;
+    }
+    
+    .hixyou{
+       /* border-collapse: collapse; */
+       /* border-spacing: 0; */
+       border: 0.5px solid #272D2D;
+       width: 50%;
+       height: 175px;
+       /* float: right; */
+       
+    }
+    .oripasamune{
+        /* display: block; */
+        width: 50%;
+        height: 175px;
+        float: left;
+        background-size: cover;/* 背景を最小値で収まる*/
+        background-repeat: no-repeat; /* 背景を繰り返さない*/
+        background-image: url(./images/oripa.jpg);
+    }
+    .design01{
+        
+        text-align: center;
+        background-color: #FFCDAD;
+        color: #272D2D;
+    }
+    
+    .design03{
+        text-align: center;
+        padding: 0.5px;
+        background: #FFCDAD;
+        border-collapse: collapse;
+        border-spacing: 0;
+        white-space: nowrap;
+    }
+    
+    .atari{
+        background: #FFCDAD;
+        border-left-style: none;
+        border-collapse: collapse;
+        border-spacing: 0;
+        text-align: center;
+    
+    }
+    .design04{
+        text-align: center;
+        padding: 0.5px;
+        background: #FFCDAD;
+        border-collapse: collapse;
+        border-spacing: 0;
+        white-space: nowrap;
+    }
+    .zentai{
+        text-align: center;
+        background: #FFCDAD;
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    .openbutton {
+        align-self: center;
+        justify-self: center;
+        width: 200px;
+        cursor:pointer;
+        color: #272D2D;
+        background-color:#FF914C;
+        padding: 10px;
+        margin-top: 30px;
+        border-radius: 10px;
+        text-align: center; /*テキストの位置　真ん中*/
+        
+    }
+    .link{
+        align-self: center;
+        justify-self: center;
+        text-decoration: underline;
+        color: #fff;
+    }
+    
+    #popup {
+        display: none;
+    }
+    
+    .gray {
+        display: none;
+    }
+    
+    #popup:checked + .gray {
+        display: block;
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 9999;
+        background: rgba(0, 0, 0, 0.6);
+    }
+    
+    .popupwindow {
+        position: fixed;
+        align-self: center;
+        justify-self: center;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        max-width: 750px;
+        padding: 30px;
+        height: 550px;
+        background-color: #fff;
+        border-radius: 4px;
+        align-items: center;
+        transform: translate(-50%, -50%);
+    }
+    
+    .popuptitle{
+        color: #E83015;
+        align-self: center;
+        justify-self: center;
+        font-size: 20px;
+        margin-bottom: 30px;
+        padding-bottom: 20px;
+        border-bottom: #E83015 2px solid;
+    }
+    
+    .popupclose {
+        position: absolute;
+        color: #fff;
+        background-color:#E83015;
+        padding: 5px 13px;
+        border-radius: 10px;
+        top: 20px;
+        right: 20px;
+        cursor:pointer;
+    }
+    
+    
+    
+    #video{
+        align-self: center;
+        justify-self: center;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        visibility: hidden;
+    }
+    
+    #camera-canvas{
+        align-self: center;
+        justify-self: center;
+        width: 100%;
+        
+        z-index: 50;
+    }
+    
+    #rect-canvas{
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        z-index: 100;
+    }
+    
+    #qr-msg{
+        color: #272D2D;
+    }

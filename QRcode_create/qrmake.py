@@ -18,9 +18,10 @@ def generate_qr_code(data,directory, filename):
     save_path = os.path.join(directory, filename)  # 保存先のパスを作成
     #new_dir ="C:\\Users\\Owner\\Documents\\web.test\\QRstock"
     img.save(save_path)
-save_directory = "C:\\Users\\Owner\\Documents\\web.test\\QRstock"
 
+save_directory = "./QRstock"
 url ="http://shukatsu5797.shop/" #QRコード先のリンク
+
 for i in range(1,101):
     data = f"{url}/?{i}"  # 各識別番号に対するURL パラメータ（？以降）を付ける事で識別できる。
     filename = f"qr_code_{i}.png"  # 生成されるQRコードのファイル名
