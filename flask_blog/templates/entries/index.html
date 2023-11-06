@@ -25,15 +25,18 @@
       <div class="subcontents">
         <ing class="oripasamune" background="./images/oripa.jpg"></ing>
         <table class="hixyou" border="1">  <!--表-->
+          {% for i in data_atari %}
           <th class="design01" colspan="2">○○オリパ</th>
             <tr>
+              
               <td class="design03">残り当たり数</td>
-              <td class=atari>{{ data }}</td> {#{% data %}となっていた。コメントの仕方が違った。 #}
+              <td class=atari>{{i.rest_hit_number}}</td> {#{% data %}となっていた。コメントの仕方が違った。 #}
             </tr>
           <tr>
             <td class="design04">全当たり数</td>
-            <td class="zentai">20</td>
+            <td class="zentai">{{i.all_hit_number}}</td>
           </tr> 
+          {% endfor %}
         </table>
           </div>
       
@@ -73,3 +76,4 @@
 </body>
 </html>
 <!---->
+
